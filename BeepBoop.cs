@@ -5,18 +5,6 @@ using System.Collections.Generic;
 
 class Program
 {
-    /// <summary> Safely gets an integer from user </summary>
-    static int GetInt()
-    {
-        int Input = 0;
-        while (true)
-        {
-            if (int.TryParse(Console.ReadLine(), out Input))
-                break;
-            Console.WriteLine("Bad input. Enter an integer again:");
-        }
-        return Input;
-    }
     static void Main(string[] args)
     {
         int frequency = 100;
