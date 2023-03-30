@@ -8,9 +8,11 @@ class Program
     static void Main(string[] args)
     {
         int frequency = 100;
-        const int duration = 100;
+        const int duration = 200;
 
         const int increaser = 100;
+        const int max = 1000;
+        const int min = 100;
 
         bool increase = true;
 
@@ -25,10 +27,10 @@ class Program
             else
                 frequency -= increaser;
 
-            if (frequency >= 7000)
+            if (frequency >= max)
                 increase = false;
 
-            if (frequency <= 100)
+            if (frequency <= min)
                 increase = true;
 
         }
