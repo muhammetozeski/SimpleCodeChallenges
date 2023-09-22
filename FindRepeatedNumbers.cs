@@ -5,57 +5,8 @@ Challenge:
 You can solve this question in any programming language such as C#, Python, or Java. Good luck!"
 */
 
-//MyAnswer (worse one(check the second answer)):
+//MyAnswer:
 
-
-namespace ConsoleTest
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            List<int> Numbers = new List<int>();
-            HashSet<int> RepeatedNumbers = new HashSet<int>();
-
-            #region Get Inputs
-            Console.WriteLine("Enter a number or leave empty and press enter:");
-            while (true)
-            {
-                string? input = Console.ReadLine();
-                if (input == string.Empty) break;
-
-                if (int.TryParse(input, out int inputInt))
-                    Numbers.Add(inputInt);
-                else
-                    Console.WriteLine("Wrong input");
-            }
-            Console.WriteLine(Numbers.Count + " numbers are taken from user");
-            #endregion
-
-            for (int i = 0; i < Numbers.Count; i++)
-            {
-                int NumberCount = 0;
-                for (int i2 = 0; i2 < Numbers.Count; i2++)
-                {
-                    if (Numbers[i] == Numbers[i2])
-                    {
-                        if (++NumberCount > 1)
-                            RepeatedNumbers.Add(Numbers[i]);
-                    }
-                }
-            }
-            Console.WriteLine("Repeated numbers:");
-            foreach (var i in RepeatedNumbers)
-                Console.Write(i + " ");
-
-            Console.Beep(); //just for fun :)
-        }
-    }
-}
-
-
-//My second (better one) answer:
-/*
 class Program
 {
     static void Main(string[] args)
@@ -99,4 +50,52 @@ class Program
         }
     }
 }
+
+
+//My old (worse one) answer:
+/*
+namespace ConsoleTest
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> Numbers = new List<int>();
+            HashSet<int> RepeatedNumbers = new HashSet<int>();
+
+            #region Get Inputs
+            Console.WriteLine("Enter a number or leave empty and press enter:");
+            while (true)
+            {
+                string? input = Console.ReadLine();
+                if (input == string.Empty) break;
+
+                if (int.TryParse(input, out int inputInt))
+                    Numbers.Add(inputInt);
+                else
+                    Console.WriteLine("Wrong input");
+            }
+            Console.WriteLine(Numbers.Count + " numbers are taken from user");
+            #endregion
+
+            for (int i = 0; i < Numbers.Count; i++)
+            {
+                int NumberCount = 0;
+                for (int i2 = 0; i2 < Numbers.Count; i2++)
+                {
+                    if (Numbers[i] == Numbers[i2])
+                    {
+                        if (++NumberCount > 1)
+                            RepeatedNumbers.Add(Numbers[i]);
+                    }
+                }
+            }
+            Console.WriteLine("Repeated numbers:");
+            foreach (var i in RepeatedNumbers)
+                Console.Write(i + " ");
+
+            Console.Beep(); //just for fun :)
+        }
+    }
+} 
 */
